@@ -36,7 +36,13 @@ SECRET_KEY = 'django-insecure-04tc+6h@2u^oqgtty_ud&@es&&icdk#(j$z$=l_*=ltcan8ed%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = [
+    '8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',
+]
 
 
 # Application definition
