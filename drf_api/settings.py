@@ -119,11 +119,20 @@ if 'CLIENT_ORIGIN' in os.environ:
         os.environ.get('CLIENT_ORIGIN')
     ]
 else:
+
+    CORS_ALLOWED_ORIGINS = [
+        'http://localhost:3000',  # Frontend running on this port, for example
+        'https://8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',  # Your Django backend
+    ]
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https://.*\.gitpod\.io$",
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net'
+]
 
 ROOT_URLCONF = 'drf_api.urls'
 
