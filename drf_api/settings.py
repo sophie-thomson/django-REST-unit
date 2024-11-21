@@ -67,9 +67,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',
-    'localhost', 
-    'django-rest-unit-e67236d699b8.herokuapp.com',
+    os.environ.get('ALLOWED_HOST'),
+    '8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',    
 ]
 
 
