@@ -69,7 +69,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     '8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',
     'localhost', 
-    'https://django-rest-unit-e67236d699b8.herokuapp.com/',
+    'django-rest-unit-e67236d699b8.herokuapp.com',
 ]
 
 
