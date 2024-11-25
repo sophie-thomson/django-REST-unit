@@ -114,21 +114,28 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-    ]
-else:
+# if 'CLIENT_ORIGIN_DEV' in os.environ:
+#     extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+#     CORS_ALLOWED_ORIGIN_REGEXES = [
+#         rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+#     ]
+# else:
 
+#     CORS_ALLOWED_ORIGINS = [
+#         'http://localhost:3000',  # Frontend running on this port, for example
+#         'https://8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',  # Your Django backend
+#     ]
+#     CORS_ALLOWED_ORIGIN_REGEXES = [
+#         r"^https://.*\.gitpod\.io$",
+#     ]
+if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        'http://localhost:3000',  # Frontend running on this port, for example
-        'https://8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net',  # Your Django backend
+        os.environ.get('CLIENT_ORIGIN')
     ]
+if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
+        os.environ.get('CLIENT_ORIGIN_DEV', ''),
     ]
-
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
