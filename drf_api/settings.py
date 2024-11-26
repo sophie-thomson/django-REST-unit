@@ -140,6 +140,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-sophiethoms-djangorestu-60oaize2q7y.ws.codeinstitute-ide.net'
+    'https://3000-sophiethomson-moments-3ki9v3kje8g.ws.codeinstitute-ide.net/'
 ]
 
 ROOT_URLCONF = 'drf_api.urls'
